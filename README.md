@@ -13,3 +13,5 @@
 - App is based on MVVM architecture
 - Quiz App is built using Kotlin
 - Room Persistence Library
+- Navigation Component
+- Jetpack Datastore
