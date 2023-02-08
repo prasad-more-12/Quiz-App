@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="edit_text_corner_radius">8dp</dimen>
+    <dimen name="btn_radius">100dp</dimen>
+    <dimen name="btn_height">70dp</dimen>
+
+    // Home Page
+    <dimen name="card_elevation">4dp</dimen>
+    <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="card_width">0dp</dimen>
+    <dimen name="card_height">124dp</dimen>
+    <dimen name="homeTextSize">16sp</dimen>
+    <dimen name="homeImageSize">64dp</dimen>
+
+    <dimen name="card_margin">24dp</dimen>
+</resources>

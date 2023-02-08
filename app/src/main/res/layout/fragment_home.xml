@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.HomeFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/viewHeader"
+        style="@style/cardStyle"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/tvHello"
+                style="@style/homeTextView"
+                android:layout_width="@dimen/homeImageSize"
+                android:layout_height="@dimen/homeImageSize"
+                android:layout_marginStart="16sp"
+                android:src="@drawable/avatar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="13dp" />
+
+            <TextView
+                android:id="@+id/tvUser"
+                style="@style/homeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/user"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvHello"
+                app:layout_constraintStart_toEndOf="@+id/tvHello"
+                app:layout_constraintTop_toTopOf="@+id/tvHello" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewHeader">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvQuiz"
+            style="@style/cardStyle"
+            android:layout_width="0dp"
+            android:layout_height="124dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ivQuiz"
+                    android:layout_width="@dimen/homeImageSize"
+                    android:layout_height="@dimen/homeImageSize"
+                    android:layout_marginStart="50dp"
+                    android:src="@drawable/quiz"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvQuizText"
+                    style="@style/homeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:text="@string/quiz"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivQuiz"
+                    app:layout_constraintStart_toEndOf="@+id/ivQuiz"
+                    app:layout_constraintTop_toTopOf="@+id/ivQuiz" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvRules"
+            style="@style/cardStyle"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toStartOf="@+id/cvHistory"
+            app:layout_constraintStart_toStartOf="@id/cvQuiz"
+            app:layout_constraintTop_toBottomOf="@+id/cvQuiz">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ivRule"
+                    android:layout_width="@dimen/homeImageSize"
+                    android:layout_height="@dimen/homeImageSize"
+                    android:src="@drawable/rules"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.492"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.32" />
+
+                <TextView
+                    android:id="@+id/tvRule"
+                    style="@style/homeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rules"
+                    app:layout_constraintEnd_toEndOf="@+id/ivRule"
+                    app:layout_constraintStart_toStartOf="@+id/ivRule"
+                    app:layout_constraintTop_toBottomOf="@+id/ivRule" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvHistory"
+            style="@style/cardStyle"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/cvQuiz"
+            app:layout_constraintStart_toEndOf="@+id/cvRules"
+            app:layout_constraintTop_toBottomOf="@+id/cvQuiz">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ivHistory"
+                    android:layout_width="@dimen/homeImageSize"
+                    android:layout_height="@dimen/homeImageSize"
+                    android:src="@drawable/history"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.492"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.32" />
+
+                <TextView
+                    android:id="@+id/tvHistory"
+                    style="@style/homeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/history"
+                    app:layout_constraintEnd_toEndOf="@+id/ivHistory"
+                    app:layout_constraintStart_toStartOf="@+id/ivHistory"
+                    app:layout_constraintTop_toBottomOf="@+id/ivHistory" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvEditPassword"
+            style="@style/cardStyle"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toStartOf="@+id/cvSignOut"
+            app:layout_constraintStart_toStartOf="@id/cvRules"
+            app:layout_constraintTop_toBottomOf="@+id/cvRules">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ivPassword"
+                    android:layout_width="@dimen/homeImageSize"
+                    android:layout_height="@dimen/homeImageSize"
+                    android:src="@drawable/password"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.32" />
+
+                <TextView
+                    android:id="@+id/tvPassword"
+                    style="@style/homeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/edit_password"
+                    app:layout_constraintEnd_toEndOf="@+id/ivPassword"
+                    app:layout_constraintStart_toStartOf="@+id/ivPassword"
+                    app:layout_constraintTop_toBottomOf="@+id/ivPassword" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvSignOut"
+            style="@style/cardStyle"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/cvHistory"
+            app:layout_constraintStart_toEndOf="@+id/cvEditPassword"
+            app:layout_constraintTop_toBottomOf="@+id/cvHistory">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ivLogout"
+                    android:layout_width="@dimen/homeImageSize"
+                    android:layout_height="@dimen/homeImageSize"
+                    android:src="@drawable/logout"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.529"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.32" />
+
+                <TextView
+                    android:id="@+id/tvLogout"
+                    style="@style/homeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign_out"
+                    app:layout_constraintEnd_toEndOf="@+id/ivLogout"
+                    app:layout_constraintStart_toStartOf="@+id/ivLogout"
+                    app:layout_constraintTop_toBottomOf="@+id/ivLogout" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
