@@ -51,9 +51,24 @@
         <item name="cardCornerRadius">@dimen/card_corner_radius</item>
     </style>
 
-<style name="homeTextView">
-    <item name="android:textSize">@dimen/homeTextSize</item>
-    <item name="android:textStyle">bold</item>
-    <item name="android:textColor">@color/text_color</item>
-</style>
+    <style name="homeTextView">
+        <item name="android:textSize">@dimen/homeTextSize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <style name="questionTextView">
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:layout_marginStart">@dimen/card_margin</item>
+        <item name="android:layout_marginEnd">@dimen/card_margin</item>
+        <item name="android:layout_marginTop">32dp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="text_radio_button_answer">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="buttonTint">@color/orange</item>
+    </style>
 </resources>

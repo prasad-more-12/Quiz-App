@@ -21,4 +21,6 @@
     <string name="maths">Maths</string>
     <string name="geography">Geography</string>
     <string name="literature">Literature</string>
+    <string name="enter_answer">Enter Answer</string>
+    <string name="next">Next</string>
 </resources>

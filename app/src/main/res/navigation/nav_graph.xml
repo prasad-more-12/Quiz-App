@@ -69,7 +69,17 @@
         android:id="@+id/quizOptionFragment"
         android:name="com.example.quizapp.ui.QuizOptionFragment"
         android:label="Quiz Option"
-        tools:layout="@layout/fragment_quiz_option" />
+        tools:layout="@layout/fragment_quiz_option" >
+        <action
+            android:id="@+id/action_quizOptionFragment_to_mathsFragment"
+            app:destination="@id/mathsFragment" />
+        <action
+            android:id="@+id/action_quizOptionFragment_to_literatureFragment2"
+            app:destination="@id/literatureFragment" />
+        <action
+            android:id="@+id/action_quizOptionFragment_to_geographyFragment"
+            app:destination="@id/geographyFragment" />
+    </fragment>
     <fragment
         android:id="@+id/rulesFragment"
         android:name="com.example.quizapp.ui.RulesFragment"
@@ -85,5 +95,20 @@
         android:name="com.example.quizapp.ui.EditPasswordFragment"
         android:label="Edit Password"
         tools:layout="@layout/fragment_edit_password" />
+    <fragment
+        android:id="@+id/mathsFragment"
+        android:name="com.example.quizapp.ui.MathsFragment"
+        android:label="fragment_maths"
+        tools:layout="@layout/fragment_maths" />
+    <fragment
+        android:id="@+id/geographyFragment"
+        android:name="com.example.quizapp.ui.GeographyFragment"
+        android:label="fragment_geography"
+        tools:layout="@layout/fragment_geography" />
+    <fragment
+        android:id="@+id/literatureFragment"
+        android:name="com.example.quizapp.ui.LiteratureFragment"
+        android:label="fragment_literature"
+        tools:layout="@layout/fragment_literature" />
 
 </navigation>
