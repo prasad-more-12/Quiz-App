@@ -1,0 +1,22 @@
+[
+  {
+    "question": "2 + 2",
+    "answer": "4"
+  },
+  {
+    "question": "2 - 2",
+    "answer": "0"
+  },
+  {
+    "question": "2 * 3",
+    "answer": "6"
+  },
+  {
+    "question": "12 / 2",
+    "answer": "6"
+  },
+  {
+    "question": "7 % 2",
+    "answer": "1"
+  }
+]

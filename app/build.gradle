@@ -76,4 +76,7 @@ dependencies {
     def data_store="1.0.0"
     implementation ("androidx.datastore:datastore-preferences:$data_store")
 
+    // Gson
+    def gson="2.9.0"
+    implementation ("com.google.code.gson:gson:$gson")
 }
