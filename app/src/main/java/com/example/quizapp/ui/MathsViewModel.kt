@@ -11,7 +11,7 @@ import java.lang.IllegalArgumentException
 
 class MathsViewModel(private val context: Context) : ViewModel() {
     private var mathsQuestionsList: Array<Maths> = emptyArray()
-    var index = 0
+   var index=0;
     private val _questionIndex = MutableLiveData<Int>()
     val questionIndex: LiveData<Int>
         get() = _questionIndex
@@ -21,9 +21,10 @@ class MathsViewModel(private val context: Context) : ViewModel() {
         get() = _correctAnswer
 
     init {
-        mathsQuestionsList = QuizUtils.fetchQuestions(context, "questions")
+        mathsQuestionsList = QuizUtils.fetchQuestions(context, "math")
         _questionIndex.value = 0
         _correctAnswer.value = 0
+        index=0;
     }
 
     //  var newList = mathsQuestionsList.toMutableList()
@@ -32,7 +33,7 @@ class MathsViewModel(private val context: Context) : ViewModel() {
     fun getNextMathQuestion(): Maths {
         //    newList.shuffle()
         _questionIndex.value = (questionIndex.value)?.plus(1)
-        return mathsQuestionsList[index++]
+        return mathsQuestionsList[index]
         // return newList.removeAt(index++)
     }
 

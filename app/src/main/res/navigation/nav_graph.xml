@@ -98,17 +98,17 @@
     <fragment
         android:id="@+id/mathsFragment"
         android:name="com.example.quizapp.ui.MathsFragment"
-        android:label="fragment_maths"
+        android:label="Maths Quiz"
         tools:layout="@layout/fragment_maths" />
     <fragment
         android:id="@+id/geographyFragment"
         android:name="com.example.quizapp.ui.GeographyFragment"
-        android:label="fragment_geography"
+        android:label="Geography Quiz"
         tools:layout="@layout/fragment_geography" />
     <fragment
         android:id="@+id/literatureFragment"
         android:name="com.example.quizapp.ui.LiteratureFragment"
-        android:label="fragment_literature"
+        android:label="Literature Quiz"
         tools:layout="@layout/fragment_literature" />
 
 </navigation>

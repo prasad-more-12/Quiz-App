@@ -41,51 +41,54 @@ class MathsFragment : Fragment() {
         viewModel.questionIndex.observe(viewLifecycleOwner, Observer { newQuestionIndex ->
             binding.tvQuestionNumber.text = "Current Question: " + (newQuestionIndex + 1).toString()
 
+
         })
 //        viewModel.correctAnswer.observe(viewLifecycleOwner, Observer { ans ->
 //            Log.i("Ans" ,ans.toString())
 //        })
 
         setMathsQuestion(viewModel.getMathQuestion())
-
         binding.btnNextQuestionMath.setOnClickListener {
+            Log.i("Index", viewModel.index.toString())
             if (binding.tietEnterAnswerMath.text.toString().trim().isEmpty()) {
                 Toast.makeText(context, "Answer should not be empty", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
             }
             val questions = viewModel.getMathQuestion()
-            if (questions.answer == binding.tietEnterAnswerMath.text.toString().trim()) {
-                viewModel.onCorrect()
-            }
-
-            if (binding.btnNextQuestionMath.text.toString() == "Next") {
+//            if (true) {
+//                viewModel.onCorrect()
+            Log.i("ANS", questions.answer + " " + binding.tietEnterAnswerMath.text.toString())
+//            }
+            if (viewModel.index < 4) {
                 displayNextQuestion()
             }
+            if (viewModel.index ==3){
+                binding.btnNextQuestionMath.text = "Finish"
+            }
         }
-          viewModel.index = 1
 
     }
 
     private fun displayNextQuestion() {
-        if (viewModel.index < 5) {
-            setMathsQuestion(viewModel.getNextMathQuestion())
-        } else {
-            binding.btnNextQuestionMath.text = "Finish"
-        }
+
+        viewModel.index++
+        setMathsQuestion(viewModel.getNextMathQuestion())
         binding.tietEnterAnswerMath.text?.clear()
     }
 
     private fun setMathsQuestion(maths: Maths) {
+        binding.tvQuestion.text = maths.question
 //        if (binding.tietEnterAnswerMath.text.toString().trim().isNotEmpty()) {
 //            viewModel.checkAnswer(
 //                binding.tietEnterAnswerMath.text.toString().trim(),
 //                maths.answer.trim()
 //            )}
-        Log.i(
-            "Ans",
-            maths.answer.trim() + " " + binding.tietEnterAnswerMath.text.toString()
-                .trim()
-        )
+//        Log.i(
+//            "Ans",
+//            maths.answer.trim() + " " + binding.tietEnterAnswerMath.text.toString()
+//                .trim()
+//        )
 
-        binding.tvQuestion.text = maths.question
+
     }
 }

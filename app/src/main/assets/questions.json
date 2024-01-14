@@ -1,0 +1,317 @@
+[
+  {
+    "subject": "Math",
+    "questions": [
+      {
+        "question": "What is the result of 2 + 2?",
+        "options": [
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "correctAnswer": "4"
+      },
+      {
+        "question": "If you have 5 apples and you eat 2, how many apples do you have left?",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "correctAnswer": "3"
+      },
+      {
+        "question": "What is the product of 3 multiplied by 7?",
+        "options": [
+          "14",
+          "18",
+          "21",
+          "24"
+        ],
+        "correctAnswer": "21"
+      },
+      {
+        "question": "If a rectangle has length 8 units and width 4 units, what is its area?",
+        "options": [
+          "24",
+          "32",
+          "40",
+          "48"
+        ],
+        "correctAnswer": "32"
+      },
+      {
+        "question": "What is the sum of 10 and 15?",
+        "options": [
+          "20",
+          "25",
+          "30",
+          "35"
+        ],
+        "correctAnswer": "25"
+      },
+      {
+        "question": "If a car travels at a speed of 60 miles per hour, how far will it travel in 2 hours?",
+        "options": [
+          "90",
+          "100",
+          "110",
+          "120"
+        ],
+        "correctAnswer": "120"
+      },
+      {
+        "question": "Simplify: 4 * (5 + 2) - 3",
+        "options": [
+          "14",
+          "18",
+          "22",
+          "25"
+        ],
+        "correctAnswer": "25"
+      },
+      {
+        "question": "If a triangle has a base of 6 units and a height of 8 units, what is its area?",
+        "options": [
+          "12",
+          "18",
+          "24",
+          "30"
+        ],
+        "correctAnswer": "24"
+      },
+      {
+        "question": "What is the difference between 9 and 4?",
+        "options": [
+          "3",
+          "5",
+          "7",
+          "9"
+        ],
+        "correctAnswer": "5"
+      },
+      {
+        "question": "If you divide 20 by 4, what is the quotient?",
+        "options": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "correctAnswer": "5"
+      }
+    ]
+  },
+  {
+    "subject": "Literature",
+    "questions": [
+      {
+        "question": "Who wrote 'To Kill a Mockingbird'?",
+        "options": [
+          "Harper Lee",
+          "J.K. Rowling",
+          "Ernest Hemingway",
+          "F. Scott Fitzgerald"
+        ],
+        "correctAnswer": "Harper Lee"
+      },
+      {
+        "question": "In which Shakespeare play does the character Othello appear?",
+        "options": [
+          "Macbeth",
+          "Othello",
+          "Hamlet",
+          "King Lear"
+        ],
+        "correctAnswer": "Othello"
+      },
+      {
+        "question": "Which novel is set in the fictional Maycomb County?",
+        "options": [
+          "The Great Gatsby",
+          "To Kill a Mockingbird",
+          "1984",
+          "Pride and Prejudice"
+        ],
+        "correctAnswer": "To Kill a Mockingbird"
+      },
+      {
+        "question": "Who wrote '1984'?",
+        "options": [
+          "George Orwell",
+          "Aldous Huxley",
+          "Ray Bradbury",
+          "Margaret Atwood"
+        ],
+        "correctAnswer": "George Orwell"
+      },
+      {
+        "question": "In 'The Catcher in the Rye', what is the name of the protagonist?",
+        "options": [
+          "Holden Caulfield",
+          "Atticus Finch",
+          "Jay Gatsby",
+          "Scout Finch"
+        ],
+        "correctAnswer": "Holden Caulfield"
+      },
+      {
+        "question": "Which Jane Austen novel features the character Elizabeth Bennet?",
+        "options": [
+          "Emma",
+          "Pride and Prejudice",
+          "Sense and Sensibility",
+          "Mansfield Park"
+        ],
+        "correctAnswer": "Pride and Prejudice"
+      },
+      {
+        "question": "Who wrote 'The Great Gatsby'?",
+        "options": [
+          "F. Scott Fitzgerald",
+          "Herman Melville",
+          "Mark Twain",
+          "J.D. Salinger"
+        ],
+        "correctAnswer": "F. Scott Fitzgerald"
+      },
+      {
+        "question": "In 'Frankenstein', who is the creator of the monster?",
+        "options": [
+          "Victor Frankenstein",
+          "Robert Walton",
+          "Henry Clerval",
+          "Elizabeth Lavenza"
+        ],
+        "correctAnswer": "Victor Frankenstein"
+      },
+      {
+        "question": "Which play by Arthur Miller is a dramatized and partially fictionalized account of the Salem witch trials?",
+        "options": [
+          "The Crucible",
+          "Death of a Salesman",
+          "A View from the Bridge",
+          "All My Sons"
+        ],
+        "correctAnswer": "The Crucible"
+      },
+      {
+        "question": "Who wrote 'The Lord of the Rings' trilogy?",
+        "options": [
+          "J.K. Rowling",
+          "George R.R. Martin",
+          "J.R.R. Tolkien",
+          "C.S. Lewis"
+        ],
+        "correctAnswer": "J.R.R. Tolkien"
+      }
+    ]
+  },
+  {
+    "subject": "Geography",
+    "questions": [
+      {
+        "question": "What is the capital of Japan?",
+        "options": [
+          "Seoul",
+          "Beijing",
+          "Tokyo",
+          "Bangkok"
+        ],
+        "correctAnswer": "Tokyo"
+      },
+      {
+        "question": "Which is the longest river in the world?",
+        "options": [
+          "Amazon River",
+          "Nile River",
+          "Yangtze River",
+          "Mississippi River"
+        ],
+        "correctAnswer": "Nile River"
+      },
+      {
+        "question": "What is the capital of France?",
+        "options": [
+          "Berlin",
+          "Madrid",
+          "Rome",
+          "Paris"
+        ],
+        "correctAnswer": "Paris"
+      },
+      {
+        "question": "Which mountain is the tallest in the world?",
+        "options": [
+          "Mount Kilimanjaro",
+          "Mount McKinley",
+          "Mount Everest",
+          "Mount Fuji"
+        ],
+        "correctAnswer": "Mount Everest"
+      },
+      {
+        "question": "What is the largest desert in the world?",
+        "options": [
+          "Sahara Desert",
+          "Gobi Desert",
+          "Antarctica",
+          "Arabian Desert"
+        ],
+        "correctAnswer": "Antarctica"
+      },
+      {
+        "question": "Which country is known as the Land of the Rising Sun?",
+        "options": [
+          "China",
+          "South Korea",
+          "Japan",
+          "Vietnam"
+        ],
+        "correctAnswer": "Japan"
+      },
+      {
+        "question": "In which continent is the Amazon Rainforest located?",
+        "options": [
+          "Africa",
+          "Asia",
+          "South America",
+          "North America"
+        ],
+        "correctAnswer": "South America"
+      },
+      {
+        "question": "Which river is the longest in Africa?",
+        "options": [
+          "Nile River",
+          "Congo River",
+          "Niger River",
+          "Zambezi River"
+        ],
+        "correctAnswer": "Nile River"
+      },
+      {
+        "question": "What is the capital of Australia?",
+        "options": [
+          "Sydney",
+          "Melbourne",
+          "Canberra",
+          "Perth"
+        ],
+        "correctAnswer": "Canberra"
+      },
+      {
+        "question": "Which strait separates Asia and North America?",
+        "options": [
+          "Strait of Malacca",
+          "Bering Strait",
+          "Strait of Gibraltar",
+          "Strait of Hormuz"
+        ],
+        "correctAnswer": "Bering Strait"
+      }
+    ]
+  }
+]
