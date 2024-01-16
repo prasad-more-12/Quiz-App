@@ -1,4 +1,4 @@
-package com.example.quizapp.ui
+package com.example.quizapp.ui.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.LiveData

@@ -7,15 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
-import com.example.quizapp.R
 import com.example.quizapp.data.Maths
 import com.example.quizapp.databinding.FragmentMathsBinding
-import com.example.quizapp.databinding.FragmentQuizOptionBinding
-import kotlin.text.Typography.quote
+import com.example.quizapp.ui.viewmodels.MathsViewModel
+import com.example.quizapp.ui.viewmodels.MathsViewModelFactory
 
 class MathsFragment : Fragment() {
     private var _binding: FragmentMathsBinding? = null
