@@ -10,10 +10,9 @@ import com.example.quizapp.QuizUtils
 import com.example.quizapp.data.QuizQuestions
 import java.lang.IllegalArgumentException
 
-class LiteratureViewModel(private val context: Context) : ViewModel() {
-    private var literatureQuestionList: List<QuizQuestions> = emptyList()
+class GeographyViewModel(private val context: Context) : ViewModel() {
+    private var geographyQuestionList: List<QuizQuestions> = emptyList()
 
-    //    var index=0;
     val _questionIndex = MutableLiveData<Int>()
     val questionIndex: LiveData<Int>
         get() = _questionIndex
@@ -23,22 +22,22 @@ class LiteratureViewModel(private val context: Context) : ViewModel() {
         get() = _correctAnswer
 
     init {
-        literatureQuestionList = QuizUtils.getSubjectQuestions(context, "Literature")
-        Log.i("Literature", literatureQuestionList.toString());
+        geographyQuestionList = QuizUtils.getSubjectQuestions(context, "Geography")
+        Log.i("Literature", geographyQuestionList.toString());
         _questionIndex.value = 0
         _correctAnswer.value = 0
     }
 
     fun getQuizQuestions(): QuizQuestions {
-        return literatureQuestionList[_questionIndex.value!!]
+        return geographyQuestionList[_questionIndex.value!!]
     }
 }
 
-class LiteratureViewModelFactory(private val context: Context) : ViewModelProvider.Factory {
+class GeographyViewModelFactory(private val context: Context) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(LiteratureViewModel::class.java)) {
+        if (modelClass.isAssignableFrom(GeographyViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return LiteratureViewModel(context) as T
+            return GeographyViewModel(context) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

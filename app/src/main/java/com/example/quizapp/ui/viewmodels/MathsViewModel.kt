@@ -11,7 +11,7 @@ import java.lang.IllegalArgumentException
 
 class MathsViewModel(private val context: Context) : ViewModel() {
     private var mathsQuestionsList: Array<Maths> = emptyArray()
-   var index=0;
+    var index=0;
     private val _questionIndex = MutableLiveData<Int>()
     val questionIndex: LiveData<Int>
         get() = _questionIndex

@@ -9,6 +9,6 @@ data class QuizData(
 
 data class QuizQuestions(
     @SerializedName("question") val question: String,
-    @SerializedName("options") val options: String,
+    @SerializedName("options") val options: List<String>,
     @SerializedName("correctAnswer") val correctAnswer: String,
 )
