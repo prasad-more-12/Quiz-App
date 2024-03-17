@@ -14,7 +14,7 @@ class LiteratureViewModel(private val context: Context) : ViewModel() {
     private var literatureQuestionList: List<QuizQuestions> = emptyList()
 
     //    var index=0;
-    val _questionIndex = MutableLiveData<Int>()
+    private val _questionIndex = MutableLiveData<Int>()
     val questionIndex: LiveData<Int>
         get() = _questionIndex
 
@@ -31,6 +31,12 @@ class LiteratureViewModel(private val context: Context) : ViewModel() {
 
     fun getQuizQuestions(): QuizQuestions {
         return literatureQuestionList[_questionIndex.value!!]
+    }
+    fun correctAnswerPoint(){
+       _correctAnswer.value=(_correctAnswer.value)?.plus(1);
+    }
+    fun getNextQuestion(){
+        _questionIndex.value=(_questionIndex.value)?.plus(1);
     }
 }
 

@@ -13,7 +13,7 @@ import java.lang.IllegalArgumentException
 class GeographyViewModel(private val context: Context) : ViewModel() {
     private var geographyQuestionList: List<QuizQuestions> = emptyList()
 
-    val _questionIndex = MutableLiveData<Int>()
+    private val _questionIndex = MutableLiveData<Int>()
     val questionIndex: LiveData<Int>
         get() = _questionIndex
 
@@ -30,6 +30,12 @@ class GeographyViewModel(private val context: Context) : ViewModel() {
 
     fun getQuizQuestions(): QuizQuestions {
         return geographyQuestionList[_questionIndex.value!!]
+    }
+    fun correctAnswerPoint(){
+        _correctAnswer.value=(_correctAnswer.value)?.plus(1);
+    }
+    fun getNextQuestion(){
+        _questionIndex.value=(_questionIndex.value)?.plus(1);
     }
 }
 

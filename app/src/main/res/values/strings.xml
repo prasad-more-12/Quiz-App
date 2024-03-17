@@ -23,4 +23,6 @@
     <string name="literature">Literature</string>
     <string name="enter_answer">Enter Answer</string>
     <string name="next">Next</string>
+    <string name="finish">Finish</string>
+    <string name="current_Question">"Current Question: %1$d"</string>
 </resources>
