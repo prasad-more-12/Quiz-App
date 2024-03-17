@@ -42,9 +42,10 @@ class LiteratureFragment : Fragment() {
         setUpQuestions(viewModel.getQuizQuestions())
 
         binding.btnNextQuestionLiterature.setOnClickListener {
-            binding.radioGroup.check( binding.radioButton1.id)
+
             if (viewModel.questionIndex.value!! < 9) {
                 isAnswerCorrect(viewModel.getQuizQuestions())
+                binding.radioGroup.check( binding.radioButton1.id)
                 displayNextQuestion()
             }
             if (viewModel.questionIndex.value == 9) {
@@ -72,7 +73,6 @@ class LiteratureFragment : Fragment() {
     }
 
     private fun displayNextQuestion() {
-//        viewModel._questionIndex.value=(viewModel._questionIndex.value?:0)+1;
         viewModel.getNextQuestion()
         setUpQuestions(viewModel.getQuizQuestions())
     }

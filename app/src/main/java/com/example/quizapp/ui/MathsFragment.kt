@@ -6,10 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioButton
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.quizapp.R
 import com.example.quizapp.data.Maths
+import com.example.quizapp.data.QuizQuestions
 import com.example.quizapp.databinding.FragmentMathsBinding
 import com.example.quizapp.ui.viewmodels.MathsViewModel
 import com.example.quizapp.ui.viewmodels.MathsViewModelFactory
@@ -34,58 +37,47 @@ class MathsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel.questionIndex.observe(viewLifecycleOwner) { newQuestionIndex ->
+            binding.tvQuestionNumber.text =
+                getString(R.string.current_Question, newQuestionIndex + 1)
 
-        viewModel.questionIndex.observe(viewLifecycleOwner, Observer { newQuestionIndex ->
-            binding.tvQuestionNumber.text = "Current Question: " + (newQuestionIndex + 1).toString()
+            Log.i("Index", "Current Question: " + (newQuestionIndex + 1).toString());
+        }
+        setUpQuestions(viewModel.getQuizQuestions())
 
-
-        })
-//        viewModel.correctAnswer.observe(viewLifecycleOwner, Observer { ans ->
-//            Log.i("Ans" ,ans.toString())
-//        })
-
-        setMathsQuestion(viewModel.getMathQuestion())
-        binding.btnNextQuestionMath.setOnClickListener {
-            Log.i("Index", viewModel.index.toString())
-            if (binding.tietEnterAnswerMath.text.toString().trim().isEmpty()) {
-                Toast.makeText(context, "Answer should not be empty", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-            val questions = viewModel.getMathQuestion()
-//            if (true) {
-//                viewModel.onCorrect()
-            Log.i("ANS", questions.answer + " " + binding.tietEnterAnswerMath.text.toString())
-//            }
-            if (viewModel.index < 4) {
+        binding.btnNextQuestionLiterature.setOnClickListener {
+            if (viewModel.questionIndex.value!! < 9) {
+                isAnswerCorrect(viewModel.getQuizQuestions())
+                binding.radioGroup.check(binding.radioButton1.id)
                 displayNextQuestion()
             }
-            if (viewModel.index ==3){
-                binding.btnNextQuestionMath.text = "Finish"
+            if (viewModel.questionIndex.value == 9) {
+                binding.btnNextQuestionLiterature.text = getText(R.string.finish)
             }
         }
+    }
+
+    private fun isAnswerCorrect(quizQuestions: QuizQuestions) {
+        val radioButtonId = binding.radioGroup.checkedRadioButtonId
+        val radioButton: RadioButton = binding.radioGroup.findViewById(radioButtonId)
+        Log.i("IsCorrect", "${radioButton.text} ${quizQuestions.correctAnswer}")
+        if (radioButton.text.toString() == quizQuestions.correctAnswer) viewModel.correctAnswerPoint()
+        Log.i("correctAnsCount", viewModel.correctAnswer.value.toString())
+
+    }
+
+    private fun setUpQuestions(quizQuestions: QuizQuestions) {
+        binding.tvQuestion.text = quizQuestions.question
+        binding.radioButton1.text = quizQuestions.options[0]
+        binding.radioButton2.text = quizQuestions.options[1]
+        binding.radioButton3.text = quizQuestions.options[2]
+        binding.radioButton4.text = quizQuestions.options[3]
 
     }
 
     private fun displayNextQuestion() {
-
-        viewModel.index++
-        setMathsQuestion(viewModel.getNextMathQuestion())
-        binding.tietEnterAnswerMath.text?.clear()
+        viewModel.getNextQuestion()
+        setUpQuestions(viewModel.getQuizQuestions())
     }
 
-    private fun setMathsQuestion(maths: Maths) {
-        binding.tvQuestion.text = maths.question
-//        if (binding.tietEnterAnswerMath.text.toString().trim().isNotEmpty()) {
-//            viewModel.checkAnswer(
-//                binding.tietEnterAnswerMath.text.toString().trim(),
-//                maths.answer.trim()
-//            )}
-//        Log.i(
-//            "Ans",
-//            maths.answer.trim() + " " + binding.tietEnterAnswerMath.text.toString()
-//                .trim()
-//        )
-
-
-    }
 }

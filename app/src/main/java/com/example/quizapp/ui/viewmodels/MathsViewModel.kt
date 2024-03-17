@@ -1,17 +1,19 @@
 package com.example.quizapp.ui.viewmodels
 
 import android.content.Context
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.quizapp.QuizUtils
-import com.example.quizapp.data.Maths
+import com.example.quizapp.data.QuizQuestions
 import java.lang.IllegalArgumentException
 
 class MathsViewModel(private val context: Context) : ViewModel() {
-    private var mathsQuestionsList: Array<Maths> = emptyArray()
-    var index=0;
+    private var mathsQuestionList: List<QuizQuestions> = emptyList()
+
+    //    var index=0;
     private val _questionIndex = MutableLiveData<Int>()
     val questionIndex: LiveData<Int>
         get() = _questionIndex
@@ -21,32 +23,22 @@ class MathsViewModel(private val context: Context) : ViewModel() {
         get() = _correctAnswer
 
     init {
-        mathsQuestionsList = QuizUtils.fetchQuestions(context, "math")
+        mathsQuestionList = QuizUtils.getSubjectQuestions(context, "Math")
+        Log.i("Math", mathsQuestionList.toString());
         _questionIndex.value = 0
         _correctAnswer.value = 0
-        index=0;
     }
 
-    //  var newList = mathsQuestionsList.toMutableList()
-    fun getMathQuestion() = mathsQuestionsList[index]
-
-    fun getNextMathQuestion(): Maths {
-        //    newList.shuffle()
-        _questionIndex.value = (questionIndex.value)?.plus(1)
-        return mathsQuestionsList[index]
-        // return newList.removeAt(index++)
+    fun getQuizQuestions(): QuizQuestions {
+        return mathsQuestionList[_questionIndex.value!!]
+    }
+    fun correctAnswerPoint(){
+        _correctAnswer.value=(_correctAnswer.value)?.plus(1);
+    }
+    fun getNextQuestion(){
+        _questionIndex.value=(_questionIndex.value)?.plus(1);
     }
 
-    fun onCorrect() {
-        _correctAnswer.value = (correctAnswer.value)?.plus(1)
-    }
-//    fun checkAnswer(input: String, ans: String) {
-//        if (input == ans) {
-//            _correctAnswer.value = (correctAnswer.value)?.plus(5)
-//        } else {
-//            _correctAnswer.value = (correctAnswer.value)?.minus(2)
-//        }
-//    }
 }
 
 class MathsViewModelFactory(private val context: Context) : ViewModelProvider.Factory {

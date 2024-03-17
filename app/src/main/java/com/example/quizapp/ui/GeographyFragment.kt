@@ -34,14 +34,17 @@ class GeographyFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.questionIndex.observe(viewLifecycleOwner) { newQuestionIndex ->
-            binding.tvQuestionNumber.text = "Current Question: " + (newQuestionIndex + 1).toString()
+            binding.tvQuestionNumber.text =
+                getString(R.string.current_Question, newQuestionIndex + 1)
             Log.i("Index","Current Question: " + (newQuestionIndex + 1).toString());
         }
         setUpQuestions(viewModel.getQuizQuestions())
 
         binding.btnNextQuestionLiterature.setOnClickListener {
+
             if (viewModel.questionIndex.value!! < 9) {
                 isAnswerCorrect(viewModel.getQuizQuestions())
+                binding.radioGroup.check( binding.radioButton1.id)
                 displayNextQuestion()
             }
             if (viewModel.questionIndex.value == 9) {
@@ -50,7 +53,6 @@ class GeographyFragment : Fragment() {
         }
     }
     private fun isAnswerCorrect(quizQuestions: QuizQuestions) {
-        binding.radioGroup.check( binding.radioButton1.id)
         val radioButtonId = binding.radioGroup.checkedRadioButtonId
         val radioButton: RadioButton = binding.radioGroup.findViewById(radioButtonId)
         Log.i("IsCorrect", "${radioButton.text} ${quizQuestions.correctAnswer}")
